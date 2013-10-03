@@ -14,7 +14,7 @@ def user_options():
         parsed.append(('lint-' + longopt + '=', None, desc))
     return parsed
 
-class PylintCommand(setuptools.Command):
+class Pep8Command(setuptools.Command):
     description = "run pylint on all your modules"
     user_options = user_options() + [
         ('lint-exclude-packages=', None, 'exclude these packages'),

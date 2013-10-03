@@ -1,9 +1,13 @@
-News
-====
+======
+ News
+======
 
-0.1
----
+ 0.1.2
+-------
 
-*Release date: 5-Jun-2012*
+*Release date: 4-Oct-2013*
 
-* First release
+* Fork of https://github.com/johnnoone/setuptools-lint
+* Adds in config parsing from setup.cfg
+* Semantic versioning
+

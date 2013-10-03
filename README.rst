@@ -1,21 +1,21 @@
-Setuptools lint command
-=======================
+=========================
+ Setuptools pep8 command
+=========================
 
+Based on https://github.com/johnnoone/setuptools-pylint
 
-This package expose `pylint`_ as a lint command into setup.py.
+This package exposes the `pep8`_ style guide checker as a
+sub-command of setup.py::
 
-.. _`pylint` : http://pypi.python.org/pypi/pylint
+    $ cat setup.cfg
+    ...
+    [pep8]
+    ignore=E225
+    ...
+    $ python setup.py pep8
 
-Usage
------
+This invokes ``pep8`` and applies any configuration from your
+``setup.cfg`` file's ``[pep8]`` section.
 
-::
+.. _`pep8` : http://pypi.python.org/pypi/pep8
 
-  python setup.py lint
-
-
-For a full list of options, do 
-
-::
-
-  python setup.py lint

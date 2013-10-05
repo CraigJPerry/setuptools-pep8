@@ -39,7 +39,7 @@ class Pep8Command(setuptools.Command):
     def run(self):
         if self.pep8_output:
             stdout, sys.stdout = sys.stdout, self.pep8_output
-            stderr, sys.stdout = sys.stderr, self.pep8_output
+            stderr, sys.stderr = sys.stderr, self.pep8_output
         config_opts = self._parse_opts()
 
         pep8style = StyleGuide(parse_argv=False, config_file=False, **config_opts)

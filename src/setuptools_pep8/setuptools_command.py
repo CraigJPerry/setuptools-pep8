@@ -6,6 +6,7 @@ import sys
 import setuptools
 from distutils import log
 from pep8 import StyleGuide, get_parser
+import re
 
 
 def get_formatted_opts():
@@ -17,16 +18,19 @@ class Pep8Command(setuptools.Command):
     description = "run pep8 on all your modules"
     user_options = [
         ('pep8-output=', None, "output report into this file"),
+        ('check-dirs=', ".", "comma separated dirs to check"),
     ]
 
     def initialize_options(self):
         self.pep8_output = None
         for opt in get_formatted_opts():
             setattr(self, opt, None)
+        self.check_dirs = "."
 
     def finalize_options(self):
         if self.pep8_output:
             self.pep8_output = open(self.pep8_output, 'w')
+        self.check_dirs = [module.strip() for module in re.split('[\s,]+', self.check_dirs)]
 
     def _parse_opts(self):
         config_opts = {}
@@ -45,7 +49,7 @@ class Pep8Command(setuptools.Command):
         pep8style = StyleGuide(parse_argv=False, config_file=False, **config_opts)
         options = pep8style.options
 	options.exclude.extend(['test', 'tests'])
-        report = pep8style.check_files(["."])
+        report = pep8style.check_files(self.check_dirs)
 
         if options.statistics:
             report.print_statistics()

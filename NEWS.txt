@@ -2,6 +2,15 @@
  News
 ======
 
+ 0.1.3
+-------
+
+*Release date: 6-Oct-2013*
+
+* Fixed github issue #1: Setting pep8 directives in setup.cfg doesn't work
+* Exposed --check-dirs= option to control which modules are checked
+* Fixed incorrect handling of stdout/stderr when redirecting pep8 output to a file
+
  0.1.2
 -------
 

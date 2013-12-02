@@ -30,7 +30,8 @@ class Pep8Command(setuptools.Command):
     def finalize_options(self):
         if self.pep8_output:
             self.pep8_output = open(self.pep8_output, 'w')
-        self.check_dirs = [module.strip() for module in re.split('[\s,]+', self.check_dirs)]
+        self.check_dirs = [module.strip()
+                           for module in re.split('[\s,]+', self.check_dirs)]
 
     def _parse_opts(self):
         config_opts = {}
@@ -46,9 +47,10 @@ class Pep8Command(setuptools.Command):
             stderr, sys.stderr = sys.stderr, self.pep8_output
         config_opts = self._parse_opts()
 
-        pep8style = StyleGuide(parse_argv=False, config_file=False, **config_opts)
+        pep8style = StyleGuide(parse_argv=False, config_file=False,
+                               **config_opts)
         options = pep8style.options
-	options.exclude.extend(['test', 'tests'])
+        options.exclude.extend(['test', 'tests'])
         report = pep8style.check_files(self.check_dirs)
 
         if options.statistics:
@@ -63,4 +65,3 @@ class Pep8Command(setuptools.Command):
             sys.stdout = stdout
             sys.stderr = stderr
             self.pep8_output.close()
-

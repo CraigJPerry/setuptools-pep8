@@ -1,3 +1,6 @@
+.. image:: https://pypip.in/d/devassistant/badge.png
+   :target: https://pypi.python.org/pypi/devassistant
+
 =========================
  Setuptools pep8 command
 =========================

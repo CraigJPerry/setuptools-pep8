@@ -1,5 +1,5 @@
-.. image:: https://pypip.in/d/devassistant/badge.png
-   :target: https://pypi.python.org/pypi/devassistant
+.. image:: https://pypip.in/d/setuptools-pep8/badge.png
+    :target: https://pypi.python.org/pypi/setuptools-pep8
 
 =========================
  Setuptools pep8 command

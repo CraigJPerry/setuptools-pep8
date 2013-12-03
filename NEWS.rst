@@ -2,6 +2,13 @@
  News
 ======
 
+ 0.1.5
+-------
+
+*Release date: 3-Dec-2013*
+
+* Bugfix: missing NEWS.rst in manifest
+
  0.1.4
 -------
 

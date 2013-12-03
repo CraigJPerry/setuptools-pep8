@@ -1,9 +1,10 @@
-.. image:: https://pypip.in/d/setuptools-pep8/badge.png
-    :target: https://pypi.python.org/pypi/setuptools-pep8
+Setuptools pep8 command
+=======================
 
-=========================
- Setuptools pep8 command
-=========================
+
+.. image:: https://pypip.in/d/setuptools-pep8/badge.png
+         :target: https://pypi.python.org/pypi/setuptools-pep8
+
 
 Based on https://github.com/johnnoone/setuptools-pylint
 

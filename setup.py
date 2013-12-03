@@ -6,7 +6,7 @@
 
 
 from setuptools import setup, find_packages
-import sys, os
+import os
 
 
 VERSION = '0.1.4'

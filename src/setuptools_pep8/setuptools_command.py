@@ -39,10 +39,8 @@ class Pep8Command(setuptools.Command):
             value = getattr(self, key, None)
             if value is not None:
                 if key in ['include', 'exclude']:
-                    value = ".svn,CVS,.bzr,.hg,.git,__pycache__," + value
-                    config_opts[key] = value.split(",")
-                else:
-                    config_opts[key] = value
+                    value = (".svn,CVS,.bzr,.hg,.git,__pycache__," + value).split(",")
+                config_opts[key] = value
         return config_opts
 
     def run(self):

@@ -21,6 +21,7 @@ class SetupCfgDirectives(unittest.TestCase):
         cmdline = ['python', 'setup.py', 'pep8']
         output = subprocess.check_output(cmdline, stderr=subprocess.STDOUT, cwd=FIXTURES_DIR)
         self.assertNotIn("excdir", output)
+        self.assertIn("incdir", output)
 
 
 if __name__ == '__main__':

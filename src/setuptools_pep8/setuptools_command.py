@@ -38,6 +38,8 @@ class Pep8Command(setuptools.Command):
         for key in get_formatted_opts():
             value = getattr(self, key, None)
             if value is not None:
+                if key in ['include', 'exclude']:
+                    value = (".svn,CVS,.bzr,.hg,.git,__pycache__," + value).split(",")
                 config_opts[key] = value
         return config_opts
 

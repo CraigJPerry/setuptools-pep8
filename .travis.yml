@@ -1,8 +1,16 @@
 language: python
 python:
-  - "2.7"
+- '2.7'
 install:
-    - "pip install --editable ."
+- pip install --editable .
 script:
-    - python -m unittest discover -v src/
+- python -m unittest discover -v src/
+deploy:
+  provider: pypi
+  user: CraigJPerry
+  password:
+    secure: eeB/wAaiHeb96Uw/h6MZAtRGHTuvgo5bGOKD1Dd1iyRJBobH6Nvu7NIuw9hb0YXP+JcYFUAUWiGMgPpr9VGabM8af0TDdqBcGIncOuN+8Z0zRvE3q94TRNDYCQihP2oT7KnO/2g2lkBPPwG+tP3hnwAV5GJDWnZBg4uBdEYJMM4=
+  on:
+    tags: true
+    repo: CraigJPerry/setuptools-pep8
 

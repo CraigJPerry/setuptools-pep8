@@ -7,7 +7,7 @@
 from setuptools import setup, find_packages
 
 
-__version__ = '0.2.0'
+__version__ = '0.9.0'
 README = open('README.rst').read()
 NEWS = open('NEWS.rst').read()
 
@@ -34,7 +34,7 @@ setup(
     url='https://github.com/CraigJPerry/setuptools-pep8',
     license='BSD',
     packages=find_packages('src'),
-    package_dir = {'': 'src'},
+    package_dir={'': 'src'},
     include_package_data=True,
     zip_safe=False,
     install_requires=['pep8'],

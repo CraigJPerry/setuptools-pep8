@@ -4,25 +4,23 @@
 
 """pep8 command for setuptools"""
 
-
 from setuptools import setup, find_packages
-import os
 
 
-VERSION = '0.1.5'
-here = os.path.abspath(os.path.dirname(__file__))
-README = open(os.path.join(here, 'README.rst')).read()
-NEWS = open(os.path.join(here, 'NEWS.rst')).read()
+__version__ = '0.1.6'
+README = open('README.rst').read()
+NEWS = open('NEWS.rst').read()
 
 
-setup(name='setuptools-pep8',
-    version=VERSION,
+setup(
+    name='setuptools-pep8',
+    version=__version__,
     description=__doc__,
     long_description=README + '\n\n' + NEWS,
     classifiers=[
         "Topic :: Documentation",
         "Framework :: Setuptools Plugin",
-        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
         "Programming Language :: Python",
         "Intended Audience :: Developers",
         "Operating System :: OS Independent",

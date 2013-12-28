@@ -67,3 +67,4 @@ class Pep8Command(setuptools.Command):
             sys.stdout = stdout
             sys.stderr = stderr
             self.pep8_output.close()
+

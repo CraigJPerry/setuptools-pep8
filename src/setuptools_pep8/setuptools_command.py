@@ -4,64 +4,27 @@
 
 """Integration of PEP8 tool with Setuptools."""
 
-import sys
 import setuptools
-from distutils import log
-from pep8 import StyleGuide, get_parser
-import re
+import pep8
+import sys
 
 
 class Pep8Command(setuptools.Command):
-    description = "run pep8 on all your modules"
-    user_options = [
-        ('pep8-output=', None, "output report into this file"),
-        ('check-dirs=', ".", "comma separated dirs to check"),
-    ]
+    """Run PEP8 on your modules"""
+
+    description = __doc__
+    user_options = [(opt._long_opts[0][2:] + ("=" if opt.default != ("NO", "DEFAULT") else ""), None, opt.help)
+                    for opt in pep8.get_parser().option_list]
 
     def initialize_options(self):
-        self.pep8_output = None
-        for opt in get_formatted_opts():
-            setattr(self, opt, None)
-        self.check_dirs = "."
+        # NB: These aren't used, just stops setuptools arg parser from
+        #     barfing because it doesn't know pep8's options
+        for opt in self.user_options:
+            setattr(self, opt[0].replace("-", "_").rstrip("="), None)
 
     def finalize_options(self):
-        if self.pep8_output:
-            self.pep8_output = open(self.pep8_output, 'w')
-        self.check_dirs = [module.strip()
-                           for module in re.split('[\s,]+', self.check_dirs)]
-
-    def _parse_opts(self):
-        config_opts = {}
-        for key in get_formatted_opts():
-            value = getattr(self, key, None)
-            if value is not None:
-                if key in ['include', 'exclude']:
-                    value = (".svn,CVS,.bzr,.hg,.git,__pycache__," + value).split(",")
-                config_opts[key] = value
-        return config_opts
+        pass
 
     def run(self):
-        if self.pep8_output:
-            stdout, sys.stdout = sys.stdout, self.pep8_output
-            stderr, sys.stderr = sys.stderr, self.pep8_output
-        config_opts = self._parse_opts()
-
-        pep8style = StyleGuide(parse_argv=False, config_file=False,
-                               **config_opts)
-        options = pep8style.options
-        options.exclude.extend(['test', 'tests'])
-        report = pep8style.check_files(self.check_dirs)
-
-        if options.statistics:
-            report.print_statistics()
-        if options.benchmark:
-            report.print_benchmark()
-        if report.total_errors:
-            if options.count:
-                log.error("Total Errors: " + str(report.total_errors))
-
-        if self.pep8_output:
-            sys.stdout = stdout
-            sys.stderr = stderr
-            self.pep8_output.close()
-
+        sys.argv = sys.argv[1:] + ["."]
+        pep8._main()

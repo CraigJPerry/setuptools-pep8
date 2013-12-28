@@ -1,10 +1,10 @@
 Setuptools pep8 command
 =======================
 
-
+.. image:: https://travis-ci.org/CraigJPerry/setuptools-pep8.png?branch=add-travis-ci
+   :target: https://travis-ci.org/CraigJPerry/setuptools-pep8
 .. image:: https://pypip.in/d/setuptools-pep8/badge.png
-         :target: https://pypi.python.org/pypi/setuptools-pep8
-
+   :target: https://pypi.python.org/pypi/setuptools-pep8
 
 Based on https://github.com/johnnoone/setuptools-pylint
 

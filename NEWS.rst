@@ -1,6 +1,13 @@
 News
 ====
 
+0.2.0
+-----
+
+*Release date: 28-Dec-2013*
+
+* Stable build, promoted minor version. No functional changes.
+
 0.1.7
 -----
 

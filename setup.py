@@ -7,7 +7,7 @@
 from setuptools import setup, find_packages
 
 
-__version__ = '0.1.7'
+__version__ = '0.2.0'
 README = open('README.rst').read()
 NEWS = open('NEWS.rst').read()
 

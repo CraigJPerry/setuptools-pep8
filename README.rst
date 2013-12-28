@@ -1,7 +1,7 @@
 Setuptools pep8 command
 =======================
 
-.. image:: https://travis-ci.org/CraigJPerry/setuptools-pep8.png?branch=add-travis-ci
+.. image:: https://travis-ci.org/CraigJPerry/setuptools-pep8.png?branch=master
    :target: https://travis-ci.org/CraigJPerry/setuptools-pep8
 .. image:: https://pypip.in/d/setuptools-pep8/badge.png
    :target: https://pypi.python.org/pypi/setuptools-pep8

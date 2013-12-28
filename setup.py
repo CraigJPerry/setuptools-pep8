@@ -10,6 +10,7 @@ from setuptools import setup, find_packages
 __version__ = '0.9.0'
 README = open('README.rst').read()
 NEWS = open('NEWS.rst').read()
+REQUIREMENTS = open('requirements.txt').readlines()
 
 
 setup(
@@ -22,7 +23,7 @@ setup(
     package_dir={'': 'src'},
     include_package_data=True,
     zip_safe=False,
-    install_requires=['pep8'],
+    install_requires=REQUIREMENTS,
     entry_points={
         "distutils.commands": [
             "pep8 = setuptools_pep8.setuptools_command:Pep8Command",

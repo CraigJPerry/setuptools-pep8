@@ -2,16 +2,13 @@
 # encoding: utf-8
 
 
+"""Integration of PEP8 tool with Setuptools."""
+
 import sys
 import setuptools
 from distutils import log
 from pep8 import StyleGuide, get_parser
 import re
-
-
-def get_formatted_opts():
-    opts = get_parser().config_options
-    return [opt.replace("-", "_") for opt in opts if opt != "verbose"]
 
 
 class Pep8Command(setuptools.Command):

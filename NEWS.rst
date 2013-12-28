@@ -1,6 +1,22 @@
 News
 ====
 
+0.1.7
+-----
+
+*Release date: 28-Dec-2013*
+
+* Enabled Travis-CI integration testing
+* Configured auto upload from Travis -> PyPI for tagged releases
+* Minor formatting tweaks
+
+0.1.6
+-----
+
+*Release date: Not released*
+
+* Minor tweak to .rst syntax, fix rendering issues on PyPI
+
 0.1.5
 -----
 

@@ -6,7 +6,7 @@ Setuptools pep8 command
 .. image:: https://pypip.in/d/setuptools-pep8/badge.png
    :target: https://pypi.python.org/pypi/setuptools-pep8
 
-Based on https://github.com/johnnoone/setuptools-pylint
+Originally based on https://github.com/johnnoone/setuptools-pylint
 
 This package exposes the `pep8`_ style guide checker as a
 sub-command of setup.py::
@@ -28,9 +28,8 @@ sub-command of setup.py::
     ./setup.py:41:1: W391 blank line at end of file
 
 This invokes ``pep8`` and applies any configuration from your
-``setup.cfg`` file's ``[pep8]`` section.
-
-It skips packages named "test" or "tests".
+``setup.cfg`` file's ``[pep8]`` section. Typical use cases
+include simplification of continuous-integration job configurations.
 
 .. _`pep8` : http://pypi.python.org/pypi/pep8
 

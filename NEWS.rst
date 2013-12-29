@@ -1,6 +1,41 @@
 News
 ====
 
+0.9.0
+-----
+
+*Release date: 29-Dec-2013*
+
+Final major release before v1.0 (project goes into maint mode).
+
+**Contains non-backwards-compatable changes!**
+
+Bugfixes:
+
+* Resolves clash with setuptools Command --verbose flag
+
+Features:
+
+* All pep8 cmdline options can now be specified on the ``python
+  setup.py pep8`` command line
+* pep8 return code is propagated to the ``python setup.py`` command
+  return code
+
+Non-Functional Changes:
+
+* Drastic simplification of pep8 setuptools Command implementation
+* Minor changes to testing code (adopt usage of process return code)
+
+Backwards Incompatable Changes:
+
+* --pep8-output option has been removed. Replace usage of this with
+  shell redirection.
+* --check-dirs option has been removed. Replace usage of this with
+  pep8's --exclude option.
+
+Any users wishing to retain these features are advised to stay on
+version 0.2.0.
+
 0.2.0
 -----
 

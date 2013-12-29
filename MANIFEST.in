@@ -1,2 +1,4 @@
 include README.rst
 include NEWS.rst
+include requirements.txt
+
